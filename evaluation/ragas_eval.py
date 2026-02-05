@@ -13,11 +13,11 @@ from ragas.metrics import (
     context_precision
 )
 
-# 1. Setup the environment path properly
+# 1. Setup the environment path 
 env_path = Path(__file__).parent.parent / "query" / ".env"
 load_dotenv(dotenv_path=env_path)
 
-# 2. Initialize Groq via LangChain (The most stable path for Groq right now)
+# 2. Initialize Groq via LangChain 
 groq_chat = ChatGroq(
     groq_api_key=os.getenv("GROQ_API_KEY"),
     model_name="llama-3.3-70b-versatile",
@@ -25,11 +25,11 @@ groq_chat = ChatGroq(
 )
 evaluator_llm = LangchainLLMWrapper(groq_chat)
 
-# 3. Initialize Embeddings via LangChain (Stable for AnswerRelevancy)
+# 3. Initializing Embeddings via LangChain
 lc_embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
 evaluator_embeddings = LangchainEmbeddingsWrapper(lc_embeddings)
 
-# 4. Your Sample Dataset
+
 data = {
     "question": ["What is EC2?", "What is AWS Bedrock?"],
     "answer": [
@@ -47,14 +47,14 @@ data = {
 }
 dataset = Dataset.from_dict(data)
 
-# 5. Attach models to metrics (Manual attachment is safer than global defaults)
+# 4. Attach models to metrics
 faithfulness.llm = evaluator_llm
 answer_relevancy.llm = evaluator_llm
 answer_relevancy.embeddings = evaluator_embeddings
 context_precision.llm = evaluator_llm
 
-# 6. Run the evaluation
-# We use max_workers=1 to ensure Groq doesn't ban you for rate limits
+# 5. Running the evaluation
+
 from ragas.run_config import RunConfig
 results = evaluate(
     dataset=dataset,
