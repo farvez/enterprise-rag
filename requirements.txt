@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+sentence-transformers
+faiss-cpu
+pypdf
+tiktoken
+groq
+httpx
+python-dotenv
+tqdm

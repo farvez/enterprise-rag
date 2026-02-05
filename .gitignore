@@ -1,0 +1,26 @@
+# --- Python & Bytecode ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+pip-log.txt
+
+
+# --- Environment & Secrets ---
+.env
+.env.local
+
+# --- Vector Store & Artifacts ---
+vectorstore/
+*.index
+*.pkl
+*.bin
+
+# --- Logs & Performance ---
+*.log
+
+
