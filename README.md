@@ -36,14 +36,14 @@ This project demonstrates **enterprise-preferred RAG architecture.**
 ```mermaid
 
 graph TD
-    A[AWS PDF Docs] --&gt; B[Token-Based Chunking]
-    B --&gt; C[Embeddings - MiniLM]
-    C --&gt; D[FAISS Vector Store]
-    D --&gt; E{Retrieval - Recall}
-    E --&gt; F[Cross-Encoder Re-Ranking]
-    F --&gt; G[Prompt Grounding]
-    G --&gt; H[LLM - LLaMA-3]
-    H --&gt; I[Answer + Citations]
+    A[AWS PDF Docs] --> B[Token-Based Chunking]
+    B --> C[Embeddings - MiniLM]
+    C --> D[FAISS Vector Store]
+    D --> E{Retrieval - Recall}
+    E --> F[Cross-Encoder Re-Ranking]
+    F --> G[Prompt Grounding]
+    G --> H[LLM - LLaMA-3]
+    H --> I[Answer + Citations]
 
 ```
 
@@ -292,6 +292,7 @@ What is the capital city of India?
 I don’t know. The provided context does not contain this information.
 ```
 :heavy_check_mark: Correct refusal
+
 :heavy_check_mark: No hallucination
 
 ---
@@ -312,8 +313,11 @@ I don’t know. The provided context does not contain this information.
 ## Project Status
 
 :white_check_mark: End-to-end RAG system
+
 :white_check_mark: Enterprise design patterns
+
 :white_check_mark: Observability & evaluation
+
 :white_check_mark: Dockerized deployment
 
 ---
