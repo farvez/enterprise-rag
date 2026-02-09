@@ -206,8 +206,8 @@ answer_relevancy: NaN (expected for unanswered questions)
 
 ## Installation (Local)
 ```bash
-git clone https://github.com/farvez/aws-rag-assistant.git
-cd aws-rag-assistant
+git clone https://github.com/farvez/enterprise-rag.git
+cd enterprise-rag
 ```
 
 Create virtual environment:
@@ -241,14 +241,14 @@ http://127.0.0.1:8000/docs
 
 Build image:
 ```bash
-docker build -t aws-rag-assistant .
+docker build -t enterprise-rag .
 ```
 
 Run container:
 ```bash
 docker run -p 8000:8000 \
   -e GROQ_API_KEY=your_api_key_here \
-  aws-rag-assistant
+  enterprise-rag
 ```
 ---
 
